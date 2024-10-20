@@ -19,14 +19,14 @@ local function create_fonts()
 end
 
 local function create_ui_func()
-    local color_white = Color(255, 255, 255)
+    -- local color_white = Color(255, 255, 255)
     local mat_blur = Material('pp/blurscreen')
     local scrw, scrh = ScrW(), ScrH()
 
     function Mantle.func.blur(panel)
         local x, y = panel:LocalToScreen(0, 0)
 
-        surface.SetDrawColor(color_white)
+        surface.SetDrawColor(255, 255, 255, 255)
         surface.SetMaterial(mat_blur)
 
         for i = 1, 6 do
@@ -89,10 +89,10 @@ local function create_ui_func()
 
         draw.RoundedBoxEx(12, bx, by, bw, bh, Mantle.color.background_alpha, true, true, false, false)
 
-        surface.SetDrawColor(color_white)
+        surface.SetDrawColor(255, 255, 255, 255)
         surface.DrawRect(bx, by + bh - 4, bw, 4)
 
-        surface.SetTextColor(color_white)
+        surface.SetTextColor(255, 255, 255, 255)
         surface.SetTextPos(-tw * 0.5, y)
         surface.DrawText(text)
     end
